@@ -1,11 +1,11 @@
-import java.lang.reflect.Array;
-
 public class App {
     
     public static void main(String[] args) throws Exception {
         int arr[] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         bubbleSort(arr);
         quickSort(arr, 0, arr.length - 1);
+
+        //the for loop will test
         // for( int i = 0; i < arr.length; i++){
         //     System.out.println(arr[i]);
         //   }
@@ -42,15 +42,15 @@ public class App {
             while(array[rightPointer] >= pivot && leftPointer < rightPointer){
                 rightPointer--;
             }
-            swap(array, leftPointer, rightPointer);
+            pratitionSwap(array, leftPointer, rightPointer);
         }
-        swap(array, leftPointer, highIndex);
+        pratitionSwap(array, leftPointer, highIndex);
 
         quickSort(array, lowIndex, leftPointer - 1);
         quickSort(array, leftPointer + 1, highIndex);
 
     }
-    private static void swap(int[] array, int index1, int index2){
+    private static void pratitionSwap(int[] array, int index1, int index2){
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
